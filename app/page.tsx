@@ -41,9 +41,8 @@ const projects = [
     description: "Financial calculation tool for investment analysis with intuitive interface",
     tech: ["React", "TypeScript", "Next.js"],
     liveUrl: "https://roi.afterfive.hr/",
-    githubUrl: "https://github.com/ibosnic00/roi-calculator",
     category: "Full-Stack",
-    thumbnail: Calculator,
+    image: "/roi-calculator.png",
   },
   {
     id: 2,
@@ -51,9 +50,17 @@ const projects = [
     description: "Croatian e-invoicing system for business automation and compliance",
     tech: ["React", "Node.js", "API Integration"],
     liveUrl: "https://brzi-racun.afterfive.hr/",
-    githubUrl: "https://github.com/ibosnic00/e-invoice-hr",
     category: "Full-Stack",
-    thumbnail: FileText,
+    image: "/e-invoice.jpg",
+  },
+  {
+    id: 3,
+    title: "Image Coordinates Editor",
+    description: "A modern web application for editing and managing image coordinates, built with Next.js, TypeScript, and Tailwind CSS.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    liveUrl: "https://coordinates.afterfive.hr/",
+    category: "Full-Stack",
+    image: "/image-coordinates.jpg",
   },
 ]
 
@@ -184,17 +191,20 @@ export default function HomePage() {
             Exploring full-stack development in my free time, building practical solutions for real-world problems.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => {
-              const ThumbnailIcon = project.thumbnail
               return (
                 <Card
                   key={project.id}
                   className="project-tile border-border/50 hover:border-blue-500/50 cursor-pointer overflow-hidden transition-all duration-200 hover:scale-105"
                   onClick={() => window.open(project.liveUrl, "_blank")}
                 >
-                  <div className="project-thumbnail h-32 flex items-center justify-center">
-                    <ThumbnailIcon className="w-16 h-16 text-blue-500/60" />
+                  <div className="project-thumbnail h-32 flex items-center justify-center overflow-hidden relative group">
+                    <img 
+                      src={project.image} 
+                      alt={`${project.title} preview`}
+                      className="w-full h-full object-cover transition-all duration-300 group-hover:object-contain group-hover:scale-110"
+                    />
                   </div>
 
                   <CardHeader>
