@@ -122,11 +122,11 @@ export default function HomePage() {
         style={{
           background: `linear-gradient(
             ${135 + gradientPosition * 0.5}deg,
-            oklch(0.1 0.1 240) 0%,
-            oklch(0.18 ${0.15 + gradientPosition * 0.001} ${240 + gradientPosition * 0.2}) ${25 + gradientPosition * 0.1}%,
-            oklch(0.08 0.12 240) 50%,
-            oklch(0.25 ${0.18 + gradientPosition * 0.001} ${240 - gradientPosition * 0.1}) ${75 - gradientPosition * 0.1}%,
-            oklch(0.15 0.1 240) 100%
+            oklch(0.08 0.02 0) 0%,
+            oklch(0.12 ${0.03 + gradientPosition * 0.001} ${200 + gradientPosition * 0.1}) ${25 + gradientPosition * 0.1}%,
+            oklch(0.15 0.05 220) 50%,
+            oklch(0.18 ${0.08 + gradientPosition * 0.001} ${240 - gradientPosition * 0.05}) ${75 - gradientPosition * 0.1}%,
+            oklch(0.1 0.04 260) 100%
           )`,
         }}
       />
