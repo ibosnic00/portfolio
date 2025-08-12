@@ -76,7 +76,6 @@ const experience = [
 ]
 
 export default function HomePage() {
-  const [expandedProject, setExpandedProject] = useState<number | null>(null)
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null)
   const [scrollY, setScrollY] = useState(0)
   const [skillsInView, setSkillsInView] = useState(false)
@@ -191,8 +190,8 @@ export default function HomePage() {
               return (
                 <Card
                   key={project.id}
-                  className="project-tile border-border/50 hover:border-blue-500/50 cursor-pointer overflow-hidden"
-                  onClick={() => setExpandedProject(expandedProject === project.id ? null : project.id)}
+                  className="project-tile border-border/50 hover:border-blue-500/50 cursor-pointer overflow-hidden transition-all duration-200 hover:scale-105"
+                  onClick={() => window.open(project.liveUrl, "_blank")}
                 >
                   <div className="project-thumbnail h-32 flex items-center justify-center">
                     <ThumbnailIcon className="w-16 h-16 text-blue-500/60" />
@@ -231,23 +230,11 @@ export default function HomePage() {
                       ))}
                     </div>
 
-                    {expandedProject === project.id && (
-                      <div className="mt-4 pt-4 border-t border-border/50">
-                        <div className="flex gap-3">
-                          <Button
-                            size="sm"
-                            className="bg-blue-500 hover:bg-blue-600"
-                            onClick={(e) => {
-                              e.stopPropagation()
-                              window.open(project.liveUrl, "_blank")
-                            }}
-                          >
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            Live Demo
-                          </Button>
-                        </div>
+                    <div className="mt-4 pt-4 border-t border-border/50">
+                      <div className="flex items-center justify-center">
+                        <span className="text-sm text-muted-foreground">Click to view live demo</span>
                       </div>
-                    )}
+                    </div>
                   </CardContent>
                 </Card>
               )
