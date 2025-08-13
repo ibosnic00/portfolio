@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Mail, Download, Code, Cpu, Zap, Settings, Calculator, FileText } from "lucide-react"
+import { ExternalLink, Mail, Download, Code, Cpu, Zap, Settings, Calculator, FileText, Store } from "lucide-react"
 
 const skills = [
   {
@@ -42,10 +42,10 @@ const projects = [
       "Financial calculation tool for investment analysis with features including:",
       "• Compare multiple properties",
       "• Track favorites and sold properties", 
-      "• Calculate return of investment (percentage and time in years)",
-      "• Graphs and bars comparing neighbourhoods and S&P 500 performance",
-      "• Manage rental data by neighborhood and apartment size",
-      "• Automatic rent estimation based on location data",
+      "• Calculate ROI (percentage and time)",
+      "• Compare neighborhoods vs S&P 500 performance",
+      "• Manage rental data by location and size",
+      "• Automatic rent estimation",
       "• Bank loan calculator",
     ],
     tech: ["React", "TypeScript", "Next.js"],
@@ -56,7 +56,12 @@ const projects = [
   {
     id: 2,
     title: "E-Invoice HR",
-    description: "A Croatian invoice and barcode generator that creates professional PDF invoices with payment barcodes, manages customer data, and tracks invoice history for small businesses.",
+    description: [
+      "A Croatian invoice and barcode generator that creates professional PDF invoices with payment barcodes, manages customer data, and tracks invoice history for small businesses.",
+      "• Create PDF invoices with automatic numbering",
+      "• Generate PDF417 payment barcodes",
+      "• Manage company settings and customer data",
+    ],
     tech: ["React", "Node.js", "API Integration"],
     liveUrl: "https://brzi-racun.afterfive.hr/",
     category: "Full-Stack",
@@ -65,10 +70,16 @@ const projects = [
   {
     id: 3,
     title: "Image Coordinates Extractor",
-    description: "A modern web application for editing and managing image coordinates, built with Next.js, TypeScript, and Tailwind CSS.",
+    description: [
+      "A simple web application for editing and managing image coordinates.",
+      "• Draw and edit rectangular selections on images",
+      "• Extract precise coordinates",
+      "• Zoom, pan, crop and scale images",
+      "• Designed for computer vision and ML tasks",
+    ],
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     liveUrl: "https://coordinates.afterfive.hr/",
-    category: "Full-Stack",
+    category: "Front-End",
     image: "/image-coordinates.jpg",
   },
 ]
