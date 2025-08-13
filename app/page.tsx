@@ -159,7 +159,7 @@ export default function HomePage() {
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
           <h1 className="font-serif text-5xl md:text-7xl font-bold text-foreground mb-6">Engineering Performance</h1>
           <p className="font-serif text-xl md:text-2xl text-blue-500 mb-4">From Track to Code</p>
-          <p className="font-sans text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="font-sans text-lg text-muted-foreground mb-14 max-w-2xl mx-auto">
              
           </p>
 
