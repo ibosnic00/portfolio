@@ -38,7 +38,16 @@ const projects = [
   {
     id: 1,
     title: "ROI Calculator",
-    description: "Financial calculation tool for investment analysis with intuitive interface",
+    description: [
+      "Financial calculation tool for investment analysis with features including:",
+      "• Compare multiple properties",
+      "• Track favorites and sold properties", 
+      "• Calculate return of investment (percentage and time in years)",
+      "• Graphs and bars comparing neighbourhoods and S&P 500 performance",
+      "• Manage rental data by neighborhood and apartment size",
+      "• Automatic rent estimation based on location data",
+      "• Bank loan calculator",
+    ],
     tech: ["React", "TypeScript", "Next.js"],
     liveUrl: "https://roi.afterfive.hr/",
     category: "Full-Stack",
@@ -47,7 +56,7 @@ const projects = [
   {
     id: 2,
     title: "E-Invoice HR",
-    description: "Croatian e-invoicing system for business automation and compliance",
+    description: "A Croatian invoice and barcode generator that creates professional PDF invoices with payment barcodes, manages customer data, and tracks invoice history for small businesses.",
     tech: ["React", "Node.js", "API Integration"],
     liveUrl: "https://brzi-racun.afterfive.hr/",
     category: "Full-Stack",
@@ -230,7 +239,17 @@ export default function HomePage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="font-sans mb-4">{project.description}</CardDescription>
+                    <CardDescription className="font-sans mb-4">
+                      {Array.isArray(project.description) ? (
+                        <div className="space-y-1">
+                          {project.description.map((line, index) => (
+                            <div key={index}>{line}</div>
+                          ))}
+                        </div>
+                      ) : (
+                        project.description
+                      )}
+                    </CardDescription>
 
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tech.map((tech) => (
