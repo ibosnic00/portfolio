@@ -55,7 +55,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "Image Coordinates Editor",
+    title: "Image Coordinates Extractor",
     description: "A modern web application for editing and managing image coordinates, built with Next.js, TypeScript, and Tailwind CSS.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     liveUrl: "https://coordinates.afterfive.hr/",
